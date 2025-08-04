@@ -55,8 +55,43 @@
 ;;   (evil-mode 1))
 
 (use-package company
+  :ensure t
   :config
   (global-company-mode))
+
+(use-package lsp-mode
+  :ensure t
+  :commands (lsp lsp-deferred)
+  ;; :hook ((prog-mode . lsp-deferred)) ;; or lang specific
+  ;; python
+  :custom (lsp-pyright-langserver-command "pyright")
+  :hook (python-mode . (lambda ()
+                         (require 'lsp-pyright)
+                         (lsp))) ;; or lsp-deferred
+  ;; clojure
+  :hook ((clojure-mode . lsp)
+         (clojurec-mode . lsp)
+         (clojurescript-mode . lsp))
+  :init
+  (setq lsp-keymap-prefix "C-c 1") ;; set lsp-command-map prefix
+  :config
+  (setenv "PATH" (concat
+                  "/usr/local/bin" path-separator
+                  (getenv "PATH")))
+  (dolist (m '(clojure-mode
+               clojurec-mode
+               clojurescript-mode
+               clojurex-mode))
+    (add-to-list 'lsp-language-id-configuration '(,m . "clojure")))
+  (lsp-enable-which-key-integration t)) ;; key hints
+
+(use-package lsp-ui
+  :ensure t
+  :commands lsp-ui-mode)
+
+;; inline errors
+(use-package flycheck
+  :init (global-flycheck-mode))
 
 ;; Syntax highlighting & better editing
 (use-package rainbow-delimiters
@@ -71,7 +106,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages '(catppuccin-theme which-key)))
+ '(package-selected-packages '(lsp-ui lsp-mode catppuccin-theme which-key)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
