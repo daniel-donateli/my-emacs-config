@@ -11,6 +11,9 @@
 (recentf-mode 1)
 (setq recentf-max-menu-items 25)
 
+;; Electric pair - Auto close parenthesis
+(electric-pair-mode 1)
+
 ;; Show possible keybindings after prefix (like C-x)
 (use-package which-key
   :config
