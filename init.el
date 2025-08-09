@@ -23,7 +23,7 @@
 (require 'evil-config)
 
 ;; Languages configs
-
+(require 'scheme-config)
 
 
 ;; Themes configs
