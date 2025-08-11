@@ -14,4 +14,6 @@
   :config
   (evil-collection-init))
 
+(evil-set-leader '(motion normal) (kbd "SPC"))
+
 (provide 'evil-config)

@@ -21,6 +21,7 @@
 (require 'lsp)
 (require 'git)
 (require 'evil-config)
+(require 'org)
 
 ;; Languages configs
 (require 'scheme-config)
