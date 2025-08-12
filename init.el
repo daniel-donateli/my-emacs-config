@@ -22,9 +22,11 @@
 (require 'git)
 (require 'evil-config)
 (require 'org-mode-config)
+(require 'smartparens-setup)
 
 ;; Languages configs
 (require 'scheme-config)
+(require 'clojure)
 
 
 ;; Themes configs
