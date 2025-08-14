@@ -27,6 +27,7 @@
 ;; Languages configs
 (require 'scheme-config)
 (require 'clojure)
+(require 'common-lisp-config)
 
 
 ;; Themes configs
