@@ -11,8 +11,15 @@
 (recentf-mode 1)
 (setq recentf-max-menu-items 25)
 
-;; Electric pair - Auto close parenthesis
+;; Electric pair - Auto close parenthesis except for Lisp languages
 (electric-pair-mode 1)
+
+(defun disable-electric-pair ()
+  "Disable electric-pair for Lisp languages"
+  (electric-pair-local-mode -1))
+
+(add-hook 'lisp-mode-shared-hook #'disable-electric-pair)
+(add-hook 'clojure-mode-hook #'disable-electric-pair)
 
 ;; Show possible keybindings after prefix (like C-x)
 (use-package which-key
