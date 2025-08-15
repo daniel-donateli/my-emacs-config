@@ -10,6 +10,12 @@
  'org-babel-load-languages
  '((scheme . t)))
 
+(use-package ob-hy
+  :after org
+  :config
+  ;; Enable Hy in Org-Babel
+  (add-to-list 'org-babel-load-languages '(hy . t)))
+
 (setq org-confirm-babel-evaluate nil)
 (setq org-babel-scheme-eval-fn 'geiser-eval-region)
 
