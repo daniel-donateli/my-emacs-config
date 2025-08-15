@@ -11,5 +11,6 @@
  '((scheme . t)))
 
 (setq org-confirm-babel-evaluate nil)
+(setq org-babel-scheme-eval-fn 'geiser-eval-region)
 
 (provide 'org-mode-config)
