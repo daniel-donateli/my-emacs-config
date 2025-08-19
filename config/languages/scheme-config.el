@@ -5,9 +5,15 @@
   :ensure t)
 
 (use-package geiser-chez
-  :ensure t)
+  :ensure t
+  :config
+  (setq geiser-chez-binary "chez"))
 
-(setq geiser-chez-binary "chez")
-(setq geiser-active-implementations '(chez))
+(use-package geiser-chicken
+  :ensure t
+  :config
+  (setq geiser-chicken-binary "csi"))
+
+(setq geiser-active-implementations '(chez chicken))
 
 (provide 'scheme-config)
