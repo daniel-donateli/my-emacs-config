@@ -15,5 +15,6 @@
   (setq geiser-chicken-binary "csi"))
 
 (setq geiser-active-implementations '(chez chicken))
+(setq geiser-default-implementation 'chicken)
 
 (provide 'scheme-config)
