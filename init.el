@@ -28,6 +28,7 @@
 (require 'scheme-config)
 (require 'clojure)
 (require 'common-lisp-config)
+(require 'hy-config)
 
 
 ;; Themes configs
