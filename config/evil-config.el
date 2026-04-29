@@ -25,7 +25,8 @@
           lisp-mode) . evil-cleverparens-mode)
   :config
   (setq evil-cleverparens-use-additional-movement-keys t)
-  (add-hook 'geiser-repl-mode-hook #'evil-cleverparens-mode))
+  (add-hook 'geiser-repl-mode-hook #'evil-cleverparens-mode)
+  (add-hook 'slime-repl-mode-hook #'evil-cleverparens-mode))
 
 ;; (evil-set-leader '(motion normal) (kbd "SPC"))
 

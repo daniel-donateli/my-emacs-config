@@ -92,6 +92,17 @@ The leader key is `SPC` (normal/visual mode). The local leader (language-specifi
 | `C-c C-d d` | Describe symbol at point |
 | `C-c C-d h` | HyperSpec lookup |
 
+**Structural editing** (evil-cleverparens, active in both `lisp-mode` and SLIME REPL):
+
+| Key | Action |
+|-----|--------|
+| `<` | Slurp — pull next sexp into current form |
+| `>` | Barf — push last sexp out of current form |
+| `M-j` / `M-k` | Drag sexp forward / backward |
+| `(` / `)` | Move to previous / next opening paren |
+| `[` / `]` | Move to previous / next closing paren |
+| `d` `c` `y` | Safe delete/change/yank — won't unbalance parens |
+
 ### Hy
 
 | Key | Action |
