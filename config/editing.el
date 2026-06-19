@@ -20,6 +20,7 @@
 
 (add-hook 'lisp-mode-shared-hook #'disable-electric-pair)
 (add-hook 'clojure-mode-hook #'disable-electric-pair)
+(add-hook 'slime-repl-mode-hook #'disable-electric-pair)
 
 ;; Show possible keybindings after prefix (like C-x)
 (use-package which-key
