@@ -163,6 +163,30 @@
            ("M-,"        "pop definition stack"))
          12)
 
+        (insert "\n")
+        (insert (propertize "   Terraform  (SPC m … or , …)\n"
+                            'face 'my/homepage-section-face))
+        (my/hp-table
+         '(("i"  "terraform init")
+           ("p"  "terraform plan")
+           ("a"  "terraform apply")
+           ("v"  "terraform validate")
+           ("f"  "format buffer"))
+         4)
+
+        (insert "\n")
+        (insert (propertize "   Treemacs  (SPC e …)\n"
+                            'face 'my/homepage-section-face))
+        (my/hp-table
+         '(("e t"  "toggle tree")
+           ("e f"  "find current file in tree")
+           ("e w"  "focus treemacs window")
+           ("e a"  "add project to workspace")
+           ("e d"  "remove project from workspace")
+           ("e s"  "LSP symbols tree")
+           ("e r"  "LSP references at point"))
+         4)
+
         (my/hp-section "Quick Tips")
         (my/hp-table
          '(("M-x"             "run any command by name")

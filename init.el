@@ -23,12 +23,15 @@
 (require 'evil-config)
 (require 'org-mode-config)
 (require 'smartparens-setup)
+(require 'mode-summary)
+(require 'treemacs-config)
 
 ;; Languages configs
 (require 'scheme-config)
 (require 'clojure)
 (require 'common-lisp-config)
 (require 'hy-config)
+(require 'terraform-config)
 
 
 ;; Themes configs
