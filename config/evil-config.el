@@ -60,4 +60,30 @@
 (dolist (definer '(my/local-leader my/local-leader-alt))
   (eval `(,definer :keymaps 'scheme-mode-map ,@my/geiser-bindings)))
 
+(use-package ace-window
+  :config
+  (setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l)
+        aw-scope 'frame
+        aw-background t))
+
+(my/leader
+  "w"  '(:ignore t          :which-key "windows")
+  "ww" '(ace-window         :which-key "pick window")
+  "wo" '(ace-window-one-command :which-key "one action in window")
+  "wv" '(evil-window-vsplit :which-key "split vertical")
+  "ws" '(evil-window-split  :which-key "split horizontal")
+  "wq" '(evil-window-delete :which-key "close window")
+  "wm" '(delete-other-windows :which-key "maximize (close others)")
+  ;; resize
+  "w+" '(evil-window-increase-height :which-key "increase height")
+  "w-" '(evil-window-decrease-height :which-key "decrease height")
+  "w>" '(evil-window-increase-width  :which-key "increase width")
+  "w<" '(evil-window-decrease-width  :which-key "decrease width")
+  "w=" '(balance-windows             :which-key "equalize all")
+  ;; swap (Emacs 28+ built-in)
+  "wH" '(windmove-swap-states-left  :which-key "swap window left")
+  "wJ" '(windmove-swap-states-down  :which-key "swap window down")
+  "wK" '(windmove-swap-states-up    :which-key "swap window up")
+  "wL" '(windmove-swap-states-right :which-key "swap window right"))
+
 (provide 'evil-config)

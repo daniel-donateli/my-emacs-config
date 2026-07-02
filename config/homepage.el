@@ -129,10 +129,35 @@
 
         (my/hp-section "Windows")
         (my/hp-table
-         '(("C-w v / C-w s"   "split vertical / horizontal")
-           ("C-w h/j/k/l"     "focus left/down/up/right window")
-           ("C-w o"            "close all other windows")
-           ("C-w q"            "close current window")))
+         '(("SPC w w"         "pick window by letter (ace-window)")
+           ("SPC w v / w s"   "split vertical / horizontal")
+           ("SPC w q / w m"   "close / maximize")
+           ("SPC w = "        "equalize all windows")
+           ("SPC w + / w -"   "increase / decrease height")
+           ("SPC w > / w <"   "increase / decrease width")
+           ("SPC w H/J/K/L"   "swap window in direction")
+           ("C-w h/j/k/l"     "focus directional (fallback)")))
+
+        (my/hp-section "Structural Editing (Lisp)")
+        (insert (propertize "   evil-cleverparens — all Lisp modes + SLIME REPL\n"
+                            'face 'my/homepage-section-face))
+        (my/hp-table
+         '(("H / L"       "prev / next sexp")
+           ("( / )"       "go to parent open / close paren")
+           ("[ / ]"       "beginning / end of defun")
+           ("> / <"       "slurp / barf")
+           ("M-j / M-k"   "drag sexp down / up")
+           ("d / c / y"   "delete/change/yank (sexp-safe)"))
+         14)
+        (insert "\n")
+        (insert (propertize "   smartparens — auto-pairing\n"
+                            'face 'my/homepage-section-face))
+        (my/hp-table
+         '(("("          "inserts () and places cursor inside")
+           ("C-M-f/b"    "forward / backward sexp")
+           ("C-M-k"      "kill sexp")
+           ("C-M-SPC"    "mark sexp"))
+         12)
 
         (my/hp-section "SPC Leader")
         (insert (propertize "   Scheme / Geiser  (SPC m … or , …)\n"
